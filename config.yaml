@@ -9,7 +9,7 @@ arch:
   - amd64
   - armv7
 url: 'https://github.com/cosenary/hass-kindle-screensaver'
-image: 'metz/hass-kindle-screensaver-{arch}'
+image: 'metz/hass-kindle-screensaver:latest-{arch}'
 webui: 'http://[HOST]:[PORT:3000]'
 ingress: true
 ingress_port: 3000
