@@ -1,8 +1,8 @@
 name: ci
 
-on:
-  push:
-    tags: [ 'v*.*.*' ]
+on: workflow_dispatch
+  #push:
+  #  tags: [ 'v*.*.*' ]
 
 jobs:
   multi:
@@ -21,16 +21,6 @@ jobs:
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
-      - name: Build and push to Docker
-        uses: docker/build-push-action@v2
-        with:
-          context: .
-          file: ./Dockerfile
-          platforms: linux/amd64,linux/arm/v7,linux/arm64
-          push: true
-          tags: |
-            metz/hass-kindle-screensaver:${{ env.PACKAGE_VERSION }},
-            metz/hass-kindle-screensaver:latest
       - name: Build and push HA_Addon AMD64 to Docker
         uses: docker/build-push-action@v2
         with:
@@ -40,8 +30,8 @@ jobs:
           platforms: linux/amd64
           push: true
           tags: |
-            metz/hass-kindle-screensaver-ha-addon-amd64:${{ env.PACKAGE_VERSION }},
-            metz/hass-kindle-screensaver-ha-addon-amd64:latest
+            metz/hass-kindle-screensaver:${{ env.PACKAGE_VERSION }}-amd64,
+            metz/hass-kindle-screensaver:latest-amd64
       - name: Build and push HA_Addon aarch64 to Docker
         uses: docker/build-push-action@v2
         with:
@@ -51,8 +41,8 @@ jobs:
           platforms: linux/arm64/v8
           push: true
           tags: |
-            metz/hass-kindle-screensaver-ha-addon-aarch64:${{ env.PACKAGE_VERSION }},
-            metz/hass-kindle-screensaver-ha-addon-aarch64:latest
+            metz/hass-kindle-screensaver:${{ env.PACKAGE_VERSION }}-aarch64,
+            metz/hass-kindle-screensaver:latest-aarch64
       - name: Build and push HA_Addon ARMv7 to Docker
         uses: docker/build-push-action@v2
         with:
@@ -62,5 +52,5 @@ jobs:
           platforms: linux/arm/v7
           push: true
           tags: |
-            metz/hass-kindle-screensaver-ha-addon-armv7:${{ env.PACKAGE_VERSION }},
-            metz/hass-kindle-screensaver-ha-addon-armv7:latest
+            metz/hass-kindle-screensaver:${{ env.PACKAGE_VERSION }}-armv7,
+            metz/hass-kindle-screensaver:latest-armv7
