@@ -1,0 +1,10 @@
+node_modules/
+.github/
+.git/
+.vscode/
+Dockerfile
+docker-compose.yml
+LICENSE
+*.md
+*.yml
+*.yaml
