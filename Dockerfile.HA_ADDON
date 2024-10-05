@@ -13,6 +13,6 @@ ENV PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true \
 COPY ./app ./
 
 RUN npm ci \
-    chmod a+x run.sh
+    chmod a+x ./run.sh
 
 CMD [ "./run.sh" ]
