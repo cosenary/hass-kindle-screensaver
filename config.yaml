@@ -1,6 +1,6 @@
 # https://developers.home-assistant.io/docs/add-ons/configuration#add-on-config
 name: Kindle Screensaver
-version: 0.0.1
+version: 0.0.2
 slug: kindle-screensaver
 description: The addon creates regularly takes a screenshot which can be polled and used as a Kindle screensaver image of the online screensaver plugin.
 startup: application
@@ -33,7 +33,7 @@ options:
 schema:
   DEPARTURE_STATION: "str?"
   DEPARTURE_DESTINATION_STATIONS:
-    - "match(^\\w*$)"
+    - "str?"
   DEPARTURE_DESTINATION_CATEGORIES:
     - line: "match(^\\w*$)"
       category: str

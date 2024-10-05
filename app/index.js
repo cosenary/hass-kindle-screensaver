@@ -134,11 +134,12 @@ const init = async () => {
                 const timeDifference = timestampInMillis - currentTime;
                 const remainingMinutes = Math.floor(timeDifference / (1000 * 60));
 
-                let key = obj['train']; // Get the value of the specified attribute
+                let key = obj['train'];
                 // If the key doesn't exist in the accumulator, create an empty array for it
                 key = mappings[key];
 
                 if (!key) {
+                  key = 'default';
                   console.log(`Unknown train [${obj['train']}]`)
                   //return acc;
                 }

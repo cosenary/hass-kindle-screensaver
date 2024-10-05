@@ -15,4 +15,4 @@ COPY ./app ./
 RUN npm ci \
     chmod a+x run.sh
 
-CMD [ "run.sh" ]
+CMD [ "./run.sh" ]
