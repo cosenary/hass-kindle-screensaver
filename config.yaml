@@ -1,3 +1,4 @@
+# https://developers.home-assistant.io/docs/add-ons/configuration#add-on-config
 name: Kindle Screensaver
 version: 0.0.1
 slug: kindle-screensaver
@@ -9,7 +10,7 @@ arch:
   - amd64
   - armv7
 url: 'https://github.com/cosenary/hass-kindle-screensaver'
-image: 'metz/hass-kindle-screensaver:latest-{arch}'
+image: 'ghcr.io/cosenary/hass-kindle-screensaver-{arch}'
 webui: 'http://[HOST]:[PORT:3000]'
 ingress: true
 ingress_port: 3000
