@@ -1,9 +1,9 @@
 const config = {
-  port: process.env.PORT || 3000,
+  port: parseInt(process.env.PORT, 10) || 3000,
   outputPath: process.env.OUTPUT_PATH | "output/cover",
   renderingScreenSize: {
-    height: process.env.RENDERING_SCREEN_HEIGHT || 800,
-    width: process.env.RENDERING_SCREEN_WIDTH || 600,
+    height: parseInt(process.env.RENDERING_SCREEN_HEIGHT, 10) || 800,
+    width: parseInt(process.env.RENDERING_SCREEN_WIDTH, 10) || 600
   },
   departureStation: process.env.DEPARTURE_STATION,
   departureDestinationStations: process.env.DEPARTURE_DESTINATION_STATIONS,
